@@ -19,22 +19,26 @@
                 <?php 
                     $query = "SELECT * FROM categories";
                     $result_query = mysqli_query($connection, $query);
-                    while ($row = mysqli_fetch_assoc($result_query)) {
-                        echo($row["title"]);
-                    } 
-
+                    if (!empty($result_query)) {
+                        while ($row = mysqli_fetch_assoc($result_query)) {
+                            $cat_title = $row["title"];
+                            ?>
+                                <li>
+                                    <a href="#"> <?php echo $cat_title ?></a>
+                                </li>
+                            <?php
+                        } 
+                    }
                 ?>
-
-
                     <li>
-                        <a href="#">About</a>
+                        <a href="admin">Admin</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#">Services</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

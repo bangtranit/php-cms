@@ -20,6 +20,7 @@
         if (!$query_result) {
             die("QUERY FAILED".mysqli_error($connection));
         }
+        header("location: posts.php");
     }
 
 ?>

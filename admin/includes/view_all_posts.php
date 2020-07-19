@@ -1,5 +1,20 @@
 
 <?php 
+
+    if (isset($_GET["delete"])){
+        $delete_post_id = $_GET["delete"];
+        if (!$delete_post_id || $delete_post_id == "") {
+            echo "please choose the post which you want to delete";
+        }else{
+            $query = "DELETE FROM posts WHERE id = $delete_post_id";
+            $query_result = mysqli_query($connection, $query);
+            if (!$query_result) {
+                die ("QUERY FAILED".mysqli_error($connection));
+            }
+
+        }
+    }
+
     $query = "SELECT * FROM posts";
     $query_result = mysqli_query($connection, $query);
     if (!$query_result || count($query_result) == 0) {
@@ -20,6 +35,7 @@
                     <th>Tags</th>
                     <th>Comments</th>
                     <th>Date</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,6 +62,7 @@
                     <td> <?php echo $post_tags ?> </td>
                     <td> <?php echo $post_comments ?> </td>
                     <td> <?php echo $post_date ?> </td>
+                    <td><a href="posts.php?delete=<?php echo $post_id ?>">Delete</a></td>
                 </tr>
                 <?php
             }

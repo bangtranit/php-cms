@@ -1,5 +1,5 @@
 <?php
-    insert_post();
+    
 ?>
 
 
@@ -34,7 +34,7 @@
             <textarea name="post_content" id="" class="form-control" cols="30" rows="10"></textarea>
         </div>
         <div class="form-group">
-            <input type="submit" name="submit" id="" class="btn btn-primary" value="Add Post" aria-describedby="helpId">
+            <input type="submit" name="submit" id="" class="btn btn-info" value="Update Post" aria-describedby="helpId">
         </div>
 
 

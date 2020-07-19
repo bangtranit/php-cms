@@ -1,19 +1,7 @@
 
 <?php 
 
-    if (isset($_GET["delete"])){
-        $delete_post_id = $_GET["delete"];
-        if (!$delete_post_id || $delete_post_id == "") {
-            echo "please choose the post which you want to delete";
-        }else{
-            $query = "DELETE FROM posts WHERE id = $delete_post_id";
-            $query_result = mysqli_query($connection, $query);
-            if (!$query_result) {
-                die ("QUERY FAILED".mysqli_error($connection));
-            }
-
-        }
-    }
+    delete_post();
 
     $query = "SELECT * FROM posts";
     $query_result = mysqli_query($connection, $query);

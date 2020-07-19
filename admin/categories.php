@@ -40,6 +40,19 @@
                                     }
                                 }
                             }
+
+                            if (isset($_GET["delete"])) {
+                                $delete_cat_id = $_GET["delete"];
+                                echo $delete_cat_id;
+                                $query = "DELETE FROM categories where id = {$delete_cat_id}";
+                                $query_result = mysqli_query($connection, $query);
+                                if (!$query_result) {
+                                    die("QUERY FAILED".mysqli_error($connection));
+                                }else{
+                                    header("location: categories.php");
+                                }
+
+                            }
                         
                         
                         ?>
@@ -60,6 +73,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Category Title</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -76,6 +90,7 @@
                                                 <tr>
                                                     <td> <?php echo $cat_id ?> </td>
                                                     <td> <?php echo $cat_title ?> </td>
+                                                    <td><a href="categories.php?delete=<?php echo $cat_id ?> ">Delete</a></td>
                                                 </tr>
                                                 <?php
                                             }

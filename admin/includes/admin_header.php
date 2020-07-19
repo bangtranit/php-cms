@@ -1,4 +1,26 @@
-<?php include_once("../includes/db_connection.php") ?>
+<?php 
+    ob_start(); 
+    include_once("../includes/db_connection.php");
+    session_start();
+    // if (isset($_SESSION['user_role'])){
+
+    // }else{
+    //     header("location: ../index.php");
+    // } 
+    
+?>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">

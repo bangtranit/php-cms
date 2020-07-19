@@ -42,7 +42,7 @@
                                     $post_status = $row["post_status"];
                                     $post_user = $row["post_user"];
                                     $post_views_count	 = $row["post_views_count"];
-                                }
+                                
                                 ?>
                                     <h2>
                                         <a href="#"> <?php echo $post_title  ?> </a>
@@ -59,8 +59,8 @@
                                         <p> <?php echo $post_content  ?>  </p>
                                         <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
                                     <hr>
-
-                            <?php    
+                            <?php 
+                                }   
                             }else{
                                 echo "<h1> NO RESULT</h1>";
                             }

@@ -25,7 +25,26 @@
                         </ol>
 
                         <div class="col-xs-6">
-                            <form action="">
+
+                        <?php 
+                            if (isset($_POST["submit"])) {
+                                $cat_title = $_POST["cat_title"];
+                                if (!$cat_title || empty($cat_title) || $cat_title =="") {
+                                    echo "This field should not be empty";
+                                }else{
+                                    $query = "INSERT INTO categories(title) ";
+                                    $query .= "VALUE('$cat_title') ";
+                                    $query_result = mysqli_query($connection, $query);
+                                    if (!$query_result) {
+                                        die("QUERY FAILED".mysqli_error($connection));
+                                    }
+                                }
+                            }
+                        
+                        
+                        ?>
+
+                            <form action="" method="POST">
                                 <div class="form-group">
                                     <label for="">Title</label>
                                     <input type="text" name="cat_title" id="" class="form-control" placeholder="Category title" aria-describedby="helpId">

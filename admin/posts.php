@@ -32,8 +32,8 @@ include("includes/admin_header.php");
                                 $source = $_GET['source'];
                             }
                             switch ($source) {
-                                case "34":
-                                    echo "NICE 34";
+                                case "add_post":
+                                    include("includes/add_post.php");
                                     break;
                                 case "100":
                                     echo "NICE 100";
@@ -50,11 +50,8 @@ include("includes/admin_header.php");
                     </div>
                 </div>
                 <!-- /.row -->
-
             </div>
             <!-- /.container-fluid -->
-
         </div>
         <!-- /#page-wrapper -->
-
 <?php include("includes/admin_footer.php") ?>

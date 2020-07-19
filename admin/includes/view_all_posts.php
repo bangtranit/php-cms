@@ -41,7 +41,7 @@
                     <td> <?php echo $post_title ?> </td>
                     <td> <?php echo $post_cat ?> </td>
                     <td> <?php echo $post_status ?> </td>
-                    <td style="width: 10%"> <img class="img-responsive" src="../images/<?php echo $post_image ?>" alt="" style="width: 100px"
+                    <td style="width: 8%"> <img class="img-responsive" src="../images/<?php echo $post_image ?>" alt="" style="width: 100px; height:50px"
                         ></td>
                     <td> <?php echo $post_tags ?> </td>
                     <td> <?php echo $post_comments ?> </td>

@@ -1,6 +1,7 @@
 <?php 
     ob_start(); 
     include_once("../includes/db_connection.php");
+    include_once("functions.php");
     session_start();
     // if (isset($_SESSION['user_role'])){
 

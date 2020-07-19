@@ -1,9 +1,9 @@
-<?php include("includes/header.php") ?>
+<?php include("includes/admin_header.php") ?>
 
     <div id="wrapper">
 
         <!-- Navigation -->
-        <?php include("includes/navigation.php") ?>
+        <?php include("includes/admin_navigation.php") ?>
 
         <div id="page-wrapper">
 
@@ -44,22 +44,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>2</td>
-                                    </tr>
+                                    <?php 
+                                        $query = "SELECT * FROM categories";
+                                        $query_result = mysqli_query($connection, $query);
+                                        if (!$query_result) {
+                                            die("QUERY FAILED".mysqli_error($connection));
+                                        }else{
+                                            while ($row = mysqli_fetch_assoc($query_result)) {
+                                                $cat_id = $row["id"];
+                                                $cat_title = $row["title"];
+                                                ?>
+                                                <tr>
+                                                    <td> <?php echo $cat_id ?> </td>
+                                                    <td> <?php echo $cat_title ?> </td>
+                                                </tr>
+                                                <?php
+                                            }
+                                        }
+                                    
+                                    ?>
+
                                 </tbody>
                             </table>
                             
@@ -74,4 +78,4 @@
         </div>
         <!-- /#page-wrapper -->
 
-<?php include("includes/footer.php") ?>
+<?php include("includes/admin_footer.php") ?>

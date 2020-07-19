@@ -25,13 +25,13 @@
                 <!-- First Blog Post -->
                 <?php 
                     $query = "SELECT * FROM posts";
-                    $result_query = mysqli_query($connection, $query);
-                    if (!$result_query){
+                    $query_result = mysqli_query($connection, $query);
+                    if (!$query_result){
                         die("QUERY FAILED".mysqli_error($connection));
                     }
                     
-                    if (count($result_query) > 0) {
-                        while ($row = mysqli_fetch_assoc($result_query)) {
+                    if (count($query_result) > 0) {
+                        while ($row = mysqli_fetch_assoc($query_result)) {
                                 $post_title = $row["post_title"];
                                 $post_content = $row["post_content"];
                                 $post_image = $row["post_image"];

@@ -1,3 +1,5 @@
+<?php include_once("../includes/db_connection.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

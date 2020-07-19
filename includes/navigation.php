@@ -18,9 +18,9 @@
 
                 <?php 
                     $query = "SELECT * FROM categories";
-                    $result_query = mysqli_query($connection, $query);
-                    if (!empty($result_query)) {
-                        while ($row = mysqli_fetch_assoc($result_query)) {
+                    $query_result = mysqli_query($connection, $query);
+                    if (!empty($query_result)) {
+                        while ($row = mysqli_fetch_assoc($query_result)) {
                             $cat_title = $row["title"];
                             ?>
                                 <li>

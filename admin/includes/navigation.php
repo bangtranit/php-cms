@@ -28,7 +28,7 @@
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
-            <li>
+            <li class="active">
                 <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
             <li>
@@ -45,7 +45,7 @@
             <li>
                 <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Categories</a>
             </li>
-            <li class="active">
+            <li>
                 <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Comments</a>
             </li>
             <li>
@@ -59,7 +59,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="active">
+            <li>
                 <a href="blank-page.html"><i class="fa fa-fw fa-dashboard"></i> Profile</a>
             </li>
         </ul>
